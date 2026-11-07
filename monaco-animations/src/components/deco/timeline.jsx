@@ -29,8 +29,9 @@ export function useClock(duration) {
       stopRaf()
       origin.current = performance.now() - from * 1000
       setState((s) => ({ t: from, from, playing: true, started: true, runId: s.runId + 1 }))
-      const tick = (now) => {
-        const t = Math.min(duration, (now - origin.current) / 1000)
+      const tick = () => {
+        // read performance.now() (not the rAF timestamp) so the clock shares a time base with `origin`
+        const t = Math.min(duration, (performance.now() - origin.current) / 1000)
         setState((s) => ({ ...s, t, playing: t < duration }))
         if (t < duration) raf.current = requestAnimationFrame(tick)
       }
