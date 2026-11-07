@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  --font-deco: "Limelight", "Georgia", serif;
+  --font-poiret: "Poiret One", "Georgia", serif;
+  --font-italiana: "Italiana", "Georgia", serif;
+  --font-josefin: "Josefin Sans", "Helvetica Neue", sans-serif;
+
+  --color-lacquer: #070504;
+  --color-navy: #0a1224;
+  --color-navy-deep: #060b17;
+  --color-burgundy: #4a1020;
+  --color-burgundy-deep: #2a0811;
+  --color-ivory: #f2e6cc;
+  --color-gold: #d4af5a;
+  --color-gold-hot: #fbe9b0;
+  --color-gold-dark: #7a5518;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  height: 100%;
+  background: #030201;
+  color: var(--color-ivory);
+  overflow: hidden;
+}
+
+/* Gold text helper for HTML chrome (splash, HUD) */
+.text-gold-metal {
+  background: linear-gradient(180deg, #fff0bd 0%, #e2b95a 35%, #9a6b22 55%, #f3d58a 75%, #7a5114 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
